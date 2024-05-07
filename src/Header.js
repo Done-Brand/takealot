@@ -22,6 +22,7 @@ import Fab from "@mui/material/Fab";
 import CartImage from "./assets/image.png";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const theme = createTheme({
   typography: {
@@ -63,6 +64,8 @@ const StyledTypography = styled(Typography)({
 const handleClick = () => {
   window.location.href = "https://www.takealot.com/";
 };
+
+const handleCartClick = () => {};
 
 const Header = () => {
   return (
@@ -151,23 +154,38 @@ const Header = () => {
               </Stack>
             </div>
 
-            <div>
-              <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                <InputLabel id="demo-select-small-label">My Account</InputLabel>
-                <Select
-                  labelId="demo-select-small-label"
-                  id="demo-select-small"
-                >
-                  <MenuItem>Track Order</MenuItem>
-                  <MenuItem>Returns</MenuItem>
-                  <MenuItem>Credit & Refunds</MenuItem>
-                  <MenuItem>Product Reviews</MenuItem>
-                  <MenuItem>Invoices</MenuItem>
-                  <MenuItem>Personal Details</MenuItem>
-                  <MenuItem>Help Centre</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
+            
+            <FormControl
+  sx={{
+    m: 1,
+    minWidth: 130,
+    border: "none",
+    borderColor: "transparent",
+    "& fieldset": {
+      border: "none",
+    },
+  }}
+  size="small"
+>
+  <InputLabel id="demo-select-small-label">My Account</InputLabel>
+  <Select
+    labelId="demo-select-small-label"
+    id="demo-select-small"
+    label="My Account"
+    sx={{ border: "none", borderColor: "transparent" }}
+  >
+    <MenuItem>Track Order</MenuItem>
+    <MenuItem>Returns</MenuItem>
+    <MenuItem>Credit & Refunds</MenuItem>
+    <MenuItem>Product Reviews</MenuItem>
+    <MenuItem>Invoices</MenuItem>
+    <MenuItem>Personal Details</MenuItem>
+    <MenuItem>Help Centre</MenuItem>
+  </Select>
+</FormControl>
+
+
+            
 
             <div
               style={{
@@ -176,36 +194,34 @@ const Header = () => {
                 marginLeft: "30px",
               }}
             >
-              <Fab
-                size="small"
-                disabled
-                aria-label="like"
-                sx={{ marginRight: "20px" }}
-              >
+              <Fab size="small" aria-label="like" sx={{ marginRight: "20px" }}>
                 <FavoriteIcon
                   sx={{
                     color: "white",
                     backgroundColor: "#ff4081",
-                    borderRadius: "250%",
-                    padding: "8px",
+                    borderRadius: "200%",
+                    padding: "6px",
                   }}
                 />
               </Fab>
-              <div
-                style={{
-                  backgroundColor: "#4caf50",
-                  borderRadius: "50%",
-                  padding: "10px",
-                }}
-              >
-                <img
+
+              
+
+              <IconButton aria-label="cart" size="medium"
+              style={{
+                backgroundColor: "#4caf50",
+                
+              }}>
+              <img
                   src={CartImage}
                   alt="Cart"
                   width="20"
-                  height="15"
+                  height="20"
                   style={{ filter: "invert(1)" }}
                 />
-              </div>
+      </IconButton>
+
+
             </div>
           </Toolbar>
         </StyledAppBar>
@@ -291,12 +307,14 @@ const Header = () => {
               }}
               style={{ marginTop: "8px" }}
             >
-              <SearchIcon />
+              <SearchIcon
+              style={{ color: "white" }}
+              />
             </IconButton>
 
             <div
               style={{
-                border: "1px solid black",
+                
                 padding: "none",
                 borderRadius: "5px",
                 display: "inline-block",
@@ -312,6 +330,7 @@ const Header = () => {
                   boxShadow: "none",
                   color: "black",
                   backgroundColor: "lightgrey",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 ALOT For Less
@@ -322,8 +341,9 @@ const Header = () => {
                 style={{ textTransform: "none" }}
                 sx={{
                   boxShadow: "none",
-                  color: "black",
+                  color: "black", 
                   backgroundColor: "lightgrey",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 Winter
@@ -336,6 +356,7 @@ const Header = () => {
                   boxShadow: "none",
                   color: "black",
                   backgroundColor: "lightgrey",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 Mother's Day
@@ -348,6 +369,7 @@ const Header = () => {
                   boxShadow: "none",
                   color: "white",
                   backgroundColor: "#0288d1",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 Thanksalot Sneak Peak
@@ -360,6 +382,7 @@ const Header = () => {
                   boxShadow: "none",
                   color: "black",
                   backgroundColor: "lightgrey",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 Deals & Promotions
@@ -372,6 +395,7 @@ const Header = () => {
                   boxShadow: "none",
                   color: "black",
                   backgroundColor: "lightgrey",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 Brands Store
@@ -384,6 +408,7 @@ const Header = () => {
                   boxShadow: "none",
                   color: "black",
                   backgroundColor: "lightgrey",
+                  fontFamily: "Arial, sans-serif",
                 }}
               >
                 Clearance

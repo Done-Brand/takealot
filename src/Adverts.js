@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Card, CardMedia, Typography } from "@mui/material";
 import topAddImage from "./assets/topAdd.png";
+import SideAdImage from "./assets/SideAd.png";
 import NiveaImage from "./assets/Nivea.png";
 import PnPImage from "./assets/PnP.png";
 import MTNImage from "./assets/MTN.png";
@@ -12,16 +13,26 @@ const Adverts = () => {
     <Grid container justifyContent="center" sx={{ marginTop: "20px" }}>
       <Grid item xs={10} md={8} lg={6}>
         <Card>
-          <CardMedia
-            component="img"
-            sx={{
-              width: "100%",
-              height: "auto",
-              objectFit: "contain",
-            }}
-            image={topAddImage}
-            alt="Top Ad"
-          />
+        <Grid container spacing={2}>
+  <Grid item xs={12} md={8} lg={9}>
+    <CardMedia
+      component="img"
+      sx={{ width: "100%", height: "auto", objectFit: "contain" }}
+      image={topAddImage}
+      alt="Top Ad"
+    />
+  </Grid>
+  <Grid item xs={12} md={4} lg={3}>
+    <CardMedia
+      component="img"
+      sx={{ width: "100%" }}
+      image={SideAdImage}
+      alt="Side Ad"
+    />
+  </Grid>
+</Grid>
+
+          
 
           <Typography
             variant="h6"
